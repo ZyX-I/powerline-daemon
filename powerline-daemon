@@ -84,7 +84,7 @@ def render(args):
             pl.pl.exception('Failed to render {0}: {1}', str(key), str(e))
     if logger is None:
         logger = pl.logger
-    return pl.render(width=args.width, side=args.side, segment_info=segment_info)
+    return pl.render(width=args.width, side=args.side, segment_info=segment_info, mode=environ.get('POWERLINE_MODE'))
 
 def eintr_retry_call(func, *args, **kwargs):
     while True:
